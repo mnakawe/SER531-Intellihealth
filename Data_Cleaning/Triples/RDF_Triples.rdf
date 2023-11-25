@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:nodeID="N4069bf8e074e4aa792854fdb11bda080">
+    <rdf:first rdf:resource="https://example.com/ontology/#CardiovascularPatient"/>
+    <rdf:rest rdf:nodeID="N32abc0ab4537491e834446c89fb70c83"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/covidIsIndicatedby">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/Covid"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Cold"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Fatigue"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Fever"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Nausea"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/SoreThroat"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/ChestPain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/#CovidPatient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Patient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasGender">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasHeight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3da2bf4ea030499e885c2cb051c840fb">
+    <rdf:first rdf:resource="https://example.com/ontology/Dizziness"/>
+    <rdf:rest rdf:nodeID="N32a2794465054e6f90146dd861d7600e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3ca7c7f819b14f83ae767803e7cc9b04">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N65c5a57a805a4c6199bda76822889321"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/COPDisIndicatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/COPD"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Breathlessness"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/ChestPain"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/ChronicCough"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Wheezing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasWeight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasNausea">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CovidPatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Nausea"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/#Disease">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasPalpitation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CardiovascularPatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Palipitation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/isSmoker">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbe02c4223c1a4e48a786fa4d27d34102">
+    <rdf:first rdf:resource="https://example.com/ontology/Fever"/>
+    <rdf:rest rdf:nodeID="Nd9ece79008e24960ae735aa3415df929"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Covid">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Disease"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasChronicCough">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/COPDpatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/ChronicCough"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N10e114cc36cc4ce48fbc906d600d48c1">
+    <rdf:first rdf:resource="https://example.com/ontology/Breathlessness"/>
+    <rdf:rest rdf:nodeID="Na37b95fa59914cedb1514fca472eb757"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Wheezing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/COPD">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Disease"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasCold">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CovidPatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Cold"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasObesity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CardiovascularPatient"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N674d55ce88a7446d9048f6019444e3da">
+    <rdf:first rdf:resource="https://example.com/ontology/COPDpatient"/>
+    <rdf:rest rdf:nodeID="N4069bf8e074e4aa792854fdb11bda080"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasDiabetes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/#sufferedFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/#Disease"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasChestPain">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CardiovascularPatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/ChestPain"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncf811ec9f0df487794c3f012cbd3812e">
+    <rdf:first rdf:resource="https://example.com/ontology/Cold"/>
+    <rdf:rest rdf:nodeID="N3da2bf4ea030499e885c2cb051c840fb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6d2a9ae6d0424c4dbce5aa154b6071aa">
+    <rdf:first rdf:resource="https://example.com/ontology/Wheezing"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasCOPD">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/COPDpatient"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Cold">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Cardiovascular">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Disease"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasFatigue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CovidPatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Fatigue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/CVisIndicatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/Cardiovascular"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Breathlessness"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/ChestPain"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Dizziness"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Palipitation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N32abc0ab4537491e834446c89fb70c83">
+    <rdf:first rdf:resource="https://example.com/ontology/#CovidPatient"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasSoreThroat">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CovidPatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/SoreThroat"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+    <rdfs:domain rdf:resource="https://example.com/ontology/COPDpatient"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CovidPatient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/infects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:inverseOf rdf:resource="https://example.com/ontology/#sufferedFrom"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Disease"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/#Patient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/consumesAlcohol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/#hasSymptom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasWheezing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/COPDpatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Wheezing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasCholestrol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CardiovascularPatient"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasBreathlessness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CardiovascularPatient"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CovidPatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Breathlessness"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/passesWalkTest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/COPDpatient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/consumesTobacco">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasFever">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CovidPatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Fever"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na89fbb6b8276441f93d0826fa04c8f26">
+    <rdf:first rdf:resource="https://example.com/ontology/SoreThroat"/>
+    <rdf:rest rdf:nodeID="N6d2a9ae6d0424c4dbce5aa154b6071aa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N32c73538435b438e848c1a465140dfbd">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N10e114cc36cc4ce48fbc906d600d48c1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N84e62e6f3c9b4f629f57b6ce90c0c9aa">
+    <rdf:first rdf:resource="https://example.com/ontology/Palipitation"/>
+    <rdf:rest rdf:nodeID="Na89fbb6b8276441f93d0826fa04c8f26"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N65c5a57a805a4c6199bda76822889321">
+    <rdf:first rdf:resource="https://example.com/ontology/COPD"/>
+    <rdf:rest rdf:nodeID="Nf09247750cf04cb7972a5501f7d253d0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasDizziness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CardiovascularPatient"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/Dizziness"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Fatigue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf7814d2f363d4bdeb9c211b7571949de">
+    <rdf:first rdf:resource="https://example.com/ontology/ChronicCough"/>
+    <rdf:rest rdf:nodeID="Ncf811ec9f0df487794c3f012cbd3812e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasBloodPressure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Patient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/SymptomsOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#Symptom"/>
+    <rdfs:range rdf:resource="https://example.com/ontology/#Disease"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Nausea">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na37b95fa59914cedb1514fca472eb757">
+    <rdf:first rdf:resource="https://example.com/ontology/ChestPain"/>
+    <rdf:rest rdf:nodeID="Nf7814d2f363d4bdeb9c211b7571949de"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Dizziness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf09247750cf04cb7972a5501f7d253d0">
+    <rdf:first rdf:resource="https://example.com/ontology/Cardiovascular"/>
+    <rdf:rest rdf:nodeID="N918fdaff69034c68a42d2252925750e6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/#Symptom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/#CardiovascularPatient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Patient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/hasMuscularProblems">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:domain rdf:resource="https://example.com/ontology/#CardiovascularPatient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/COPDpatient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Patient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Breathlessness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/ChronicCough">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd9ece79008e24960ae735aa3415df929">
+    <rdf:first rdf:resource="https://example.com/ontology/Nausea"/>
+    <rdf:rest rdf:nodeID="N84e62e6f3c9b4f629f57b6ce90c0c9aa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N918fdaff69034c68a42d2252925750e6">
+    <rdf:first rdf:resource="https://example.com/ontology/Covid"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Palipitation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/#Patient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N21ffd4a5215149b9ab4eb651d4c78ca9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N674d55ce88a7446d9048f6019444e3da"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/Fever">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N32a2794465054e6f90146dd861d7600e">
+    <rdf:first rdf:resource="https://example.com/ontology/Fatigue"/>
+    <rdf:rest rdf:nodeID="Nbe02c4223c1a4e48a786fa4d27d34102"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.com/ontology/SoreThroat">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://example.com/ontology/#Symptom"/>
+  </rdf:Description>
+</rdf:RDF>
