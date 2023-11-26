@@ -2,10 +2,10 @@ import pandas as pd
 import os
 
 # Specify the directory containing your CSV files
-input_directory = '/Users/minalnakawe/Documents/SER 531/Project/Datasets/original/'
+input_directory = '/Users/minalnakawe/SER531-Intellihealth/Data_Cleaning/Datasets/original'
 
 # Specify the directory to save the cleaned CSV files
-output_directory = '/Users/minalnakawe/Documents/SER 531/Project/Datasets/cleaned/'
+output_directory = '/Users/minalnakawe/SER531-Intellihealth/Data_Cleaning/Datasets/cleaned'
 
 # List all CSV files in the input directory
 csv_files = [file for file in os.listdir(input_directory) if file.endswith('.csv')]
@@ -17,7 +17,7 @@ for csv_file in csv_files:
     df = pd.read_csv(file_path)
 
     # Limit the number of rows to process
-    df = df.head(1000)
+    df = df.head(3000)
 
     # Define your data cleaning logic functions
     def apply_logic_to_Cardio(df):
