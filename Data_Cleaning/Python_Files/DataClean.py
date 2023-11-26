@@ -1,25 +1,18 @@
 import pandas as pd
 import os
 
-# Specify the directory containing your CSV files
 input_directory = '/Users/minalnakawe/SER531-Intellihealth/Data_Cleaning/Datasets/original'
 
-# Specify the directory to save the cleaned CSV files
 output_directory = '/Users/minalnakawe/SER531-Intellihealth/Data_Cleaning/Datasets/cleaned'
 
-# List all CSV files in the input directory
 csv_files = [file for file in os.listdir(input_directory) if file.endswith('.csv')]
 
-# Loop through each CSV file
 for csv_file in csv_files:
-    # Read CSV file into DataFrame
     file_path = os.path.join(input_directory, csv_file)
     df = pd.read_csv(file_path)
 
-    # Limit the number of rows to process
     df = df.head(3000)
 
-    # Define your data cleaning logic functions
     def apply_logic_to_Cardio(df):
         # Gender Mapping
         gender_mapping = {1: 'Female', 2: 'Male'}
@@ -104,7 +97,6 @@ for csv_file in csv_files:
         return df.drop(columns=columns_to_remove)
        
 
-    # Choose the appropriate logic based on the CSV file
     if "Cardio_dataset" in csv_file:
         df_cleaned = apply_logic_to_Cardio(df)
     elif "COPD_dataset" in csv_file:
@@ -112,9 +104,7 @@ for csv_file in csv_files:
     elif "Covid_dataset" in csv_file:
         df_cleaned = apply_logic_to_CoVID(df)
     else:
-        # Default logic if file name doesn't match any condition
         df_cleaned = df
 
-    # Save the cleaned DataFrame to a new CSV file
     output_file_path = os.path.join(output_directory, f'cleaned_{csv_file}')
     df_cleaned.to_csv(output_file_path, index=False)
