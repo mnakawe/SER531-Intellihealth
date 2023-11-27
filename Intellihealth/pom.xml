@@ -43,6 +43,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<version>3.17.0</version> <!-- Use the latest version available -->
+			<type>pom</type>
+		</dependency>
 	</dependencies>
 
 	<build>
