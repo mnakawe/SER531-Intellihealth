@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +39,8 @@
             width: 100%;
         }
 
-        input, select {
+        input,
+        select {
             width: calc(100% - 10px);
             padding: 8px;
             margin: 5px 0;
@@ -78,9 +80,10 @@
         }
     </style>
 </head>
+
 <body>
 
-<form action="processInput" method="post">
+<form action="get_user_data" method="post">
     <h1>User Health Questionnaire</h1>
 
     <label for="age">1. Age:</label>
@@ -136,5 +139,51 @@
     <input type="submit" value="Submit"/>
 </form>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const formObject = {};
+
+            formData.forEach(function (value, key) {
+                formObject[key] = value;
+            });
+
+            const jsonData = JSON.stringify(formObject);
+            console.log('JSON Data:', jsonData);
+
+            // Replace 'your_backend_endpoint_url' with your actual backend endpoint URL
+            const backendUrl = '/get_user_data';
+
+            fetch(backendUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: jsonData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Response from backend:', data);
+                    // Optionally handle the response here
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                    // Handle errors here
+                });
+        });
+    });
+</script>
+
 </body>
+
 </html>
