@@ -110,14 +110,28 @@
         <option value="no">No</option>
     </select>
 
-    <label>7. Do you take any medications for any of the following health conditions listed below:?</label>
+    <label>7. Do you take any medications for the following</label>
+
     <div class="disease-options">
         <label class="disease-option">Cholesterol: <select name="cholesterol"><option value="yes">Yes</option><option value="no">No</option></select></label>
         <label class="disease-option">Hypertension: <select name="hypertension"><option value="yes">Yes</option><option value="no">No</option></select></label>
         <label class="disease-option">COPD: <select name="copd"><option value="yes">Yes</option><option value="no">No</option></select></label>
         <label class="disease-option">Diabetes: <select name="diabetes"><option value="yes">Yes</option><option value="no">No</option></select></label>
         <label class="disease-option">Muscular Problems: <select name="muscularProblems"><option value="yes">Yes</option><option value="no">No</option></select></label>
+        <label class="disease-option">Obesity: <select name="obesity"><option value="yes">Yes</option><option value="no">No</option></select></label>
     </div>
+
+    <label for="pneumonia">8. History of Pneumonia:</label>
+    <select id="pneumonia" name="pneumonia" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label for="asthma">9. History of Asthma:</label>
+    <select id="asthma" name="asthma" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
 
     <input type="submit" value="Submit"/>
 </form>
