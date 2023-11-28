@@ -16,5 +16,67 @@ public class HealthDataDTO {
     private String pneumonia;
     private String asthma;
 
-    // Getters and setters
+
+    private  String bloodPressure;
+
+    public String getAge() {
+        return age;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getAlcohol() {
+        return alcohol;
+    }
+
+    public String getSmoke() {
+        return smoke;
+    }
+
+    public String getCholesterol() {
+        return cholesterol;
+    }
+
+    public String getHypertension() {
+        return hypertension;
+    }
+
+    public String getCopd() {
+        return copd;
+    }
+
+    public String getDiabetes() {
+        return diabetes;
+    }
+
+    public String getMuscularProblems() {
+        return muscularProblems;
+    }
+
+    public String getObesity() {
+        return obesity;
+    }
+
+    public String getPneumonia() {
+        return pneumonia;
+    }
+
+    public String getAsthma() {
+        return asthma;
+    }
+
+    public String getBloodPressure() {
+        return bloodPressure;
+    }
+
 }

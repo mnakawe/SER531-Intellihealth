@@ -3,11 +3,15 @@ package com.example.Intellihealth.controller;
 
 import com.example.Intellihealth.Service.SPARQLService;
 import com.example.Intellihealth.model.HealthDataDTO;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/sparql")
@@ -19,18 +23,16 @@ public class Query_controller {
 
     @GetMapping("/hello")
     public void runHelloWorldQuery() {
-        sparqlService.runHelloWorldQuery();
+         sparqlService.runHelloWorldQuery();
     }
 
 
     @PostMapping("/saveHealthData")
-    public ResponseEntity<String> saveHealthData(@RequestBody HealthDataDTO healthDataDTO) {
-        // Here, you can save the health data to your database or perform any desired processing.
-        // For simplicity, let's just print the received data.
-        System.out.println("Received Health Data: " + healthDataDTO);
-
-        // Return a success response
-        return ResponseEntity.ok("Health data saved successfully");
+    public ResponseEntity<String> executeCustomQuery(@RequestBody HealthDataDTO healthData) {
+        System.out.println(healthData.getSmoke());
+        System.out.println(healthData.getAlcohol());
+        Integer queryResults = sparqlService.buildCustomQuery(healthData);
+        return new ResponseEntity<>(Integer.toString(queryResults), HttpStatus.OK);
     }
 
 //    @GetMapping("/copd")
