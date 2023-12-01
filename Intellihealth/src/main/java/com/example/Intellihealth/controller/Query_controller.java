@@ -15,6 +15,8 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/sparql")
+@CrossOrigin(origins = "http://localhost:8080//Intellihealth-0.0.1-SNAPSHOT/")
+
 public class Query_controller {
     private final String RDF_FILE_PATH = "Data_Cleaning/intellihealth.rdf";
     private final String BASE_NAMESPACE = "https://example.com/ontology/";

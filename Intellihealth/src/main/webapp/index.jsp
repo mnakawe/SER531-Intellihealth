@@ -83,7 +83,7 @@
 
 <body>
 
-<form action="get_user_data" method="post">
+<form action="/sparql/saveHealthData" method="post">
     <h1>User Health Questionnaire</h1>
 
     <label for="age">1. Age:</label>
@@ -157,7 +157,7 @@
             console.log('JSON Data:', jsonData);
 
             // Replace 'your_backend_endpoint_url' with your actual backend endpoint URL
-            const backendUrl = '/get_user_data';
+            const backendUrl = 'http://localhost:8081/sparql/saveHealthData';
 
             fetch(backendUrl, {
                 method: 'POST',
