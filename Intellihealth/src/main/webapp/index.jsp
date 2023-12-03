@@ -97,8 +97,8 @@
 
     <label for="gender">4. Gender:</label>
     <select id="gender" name="gender" required>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
     </select>
 
     <label for="alcohol">5. Do you consume alcohol?</label>
@@ -117,7 +117,7 @@
 
     <div class="disease-options">
         <label class="disease-option">Cholesterol: <select name="cholesterol"><option value="Yes">Yes</option><option value="No">No</option></select></label>
-        <label class="disease-option">Blood Pressure: <select name="bloodpressure"><option value="Yes">Yes</option><option value="No">No</option></select></label>
+        <label class="disease-option">Blood Pressure: <select name="bloodPressure"><option value="Yes">Yes</option><option value="No">No</option></select></label>
         <label class="disease-option">COPD: <select name="copd"><option value="Yes">Yes</option><option value="No">No</option></select></label>
         <label class="disease-option">Diabetes: <select name="diabetes"><option value="Yes">Yes</option><option value="No">No</option></select></label>
         <label class="disease-option">Muscular Problems: <select name="muscularProblems"><option value="Yes">Yes</option><option value="No">No</option></select></label>

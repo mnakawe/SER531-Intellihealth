@@ -2,10 +2,10 @@ package com.example.Intellihealth.Service;
 
 import com.example.Intellihealth.model.HealthDataDTO;
 import org.apache.jena.query.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,39 +19,9 @@ public class SPARQLService {
                     "PREFIX ontology: <https://example.com/ontology/>\n" +
                     "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>";
 
-//    @Autowired
-//    public SPARQLService(Dataset fusekiDataset) {
-//        this.fusekiDataset = fusekiDataset;
-//    }
-//
-//    public void executeSparqlQuery(String sparqlQuery) {
-//        try (QueryExecution qexec = QueryExecutionFactory.create(QueryFactory.create(sparqlQuery), fusekiDataset)) {
-//            ResultSet results = qexec.execSelect();
-//            while (results.hasNext()) {
-//                QuerySolution soln = results.nextSolution();
-//                // Process query results as needed
-//            }
-//        }
-//    }
-
-    public void runHelloWorldQuery() {
-        String sparqlQuery = "SELECT ?subject ?predicate ?object WHERE { ?subject ?predicate ?object } LIMIT 3";
-
-        try (QueryExecution qexec = QueryExecutionFactory.sparqlService(fusekiEndpointUrl, QueryFactory.create(sparqlQuery))) {
-            ResultSet results = qexec.execSelect();
-            while (results.hasNext()) {
-                QuerySolution soln = results.nextSolution();
-                // Process query results as needed
-                System.out.println("Subject: " + soln.get("subject"));
-                System.out.println("Predicate: " + soln.get("predicate"));
-                System.out.println("Object: " + soln.get("object"));
-                System.out.println(results);
-            }
-        }
-    }
-
-    public int buildCustomQuery(HealthDataDTO healthData) {
-        String sparqlQuery = PREFIXES +
+    public static String buildCopdQuery(HealthDataDTO healthData)
+    {
+        return PREFIXES +
                 "\nSELECT (COUNT(?user) AS ?userCount)\n" +
                 "WHERE {\n" +
                 "  ?user rdf:type ontology:COPDpatient;\n" +
@@ -70,19 +40,67 @@ public class SPARQLService {
                 "    ?userSmoker = \"" + healthData.getSmoke() + "\"\n" +
                 "  )\n" +
                 "}";
-
-
-        System.out.println(sparqlQuery);
-
-        return executeCustomQuery(sparqlQuery.toString());
     }
 
-    private static void appendFilterCondition(StringBuilder query, String property, String value) {
-        if (value != null) {
-            // Use parameterized query and proper escaping for string literals
-            query.append("    FILTER(?").append(property).append(" = '").append(value).append("') &&\n");
-        }
+    public List<Integer> buildCustomQuery(HealthDataDTO healthData) {
+        String sparqlCopdQuery = buildCopdQuery(healthData);
+        String sparqlCovidQuery = buildCovidQuery(healthData);
+        String sparqlCardioQuery = buildCardioQuery(healthData);
+
+
+        System.out.println(sparqlCopdQuery + "\n");
+        System.out.println(sparqlCovidQuery+ "\n");
+        System.out.println(sparqlCardioQuery+ "\n");
+
+        List<Integer> countList=new ArrayList<Integer>();
+
+        countList.add(executeCustomQuery(sparqlCopdQuery));
+        countList.add(executeCustomQuery(sparqlCovidQuery));
+        countList.add(executeCustomQuery(sparqlCardioQuery));
+
+        return countList;
     }
+
+    private String buildCardioQuery(HealthDataDTO healthData) {
+        return PREFIXES + "\nPREFIX onto: <https://example.com/ontology/#>"+
+                "\nSELECT (COUNT(?user) AS ?userCount)\n" +
+                "WHERE {\n" +
+                "  ?user rdf:type onto:CardiovascularPatient;\n" +
+                "    ontology:hasAge ?userAge;\n" +
+                "    ontology:hasBloodPressure ?userBloodPressure;\n" +
+                "    ontology:hasDiabetes ?userDiabetes;\n" +
+                "    ontology:hasGender ?userGender;\n" +
+                "    ontology:isSmoker ?userIsSmoker.\n" +
+                "  FILTER(\n" +
+                "    xsd:integer(?userAge) >= " + healthData.getAge() + " && xsd:integer(?userAge) <= " + Integer.toString(Integer.parseInt(healthData.getAge()) + 10) + " &&\n" +
+                "    ?userBloodPressure = \"" + healthData.getBloodPressure() + "\" &&\n" +
+                "    ?userDiabetes = \"" + healthData.getDiabetes() + "\" &&\n" +
+                "    ?userGender = \"" + healthData.getGender() + "\" &&\n" +
+                "    ?userIsSmoker = \"" + healthData.getSmoke() + "\"\n" +
+                "  )\n" +
+                "}";
+    }
+
+    private static String buildCovidQuery(HealthDataDTO healthData) {
+        return PREFIXES + "\nPREFIX onto: <https://example.com/ontology/#>"+
+                "\nSELECT (COUNT(?user) AS ?userCount)\n" +
+                "WHERE {\n" +
+                "  ?user rdf:type onto:CovidPatient;\n" +
+                "    ontology:hasAge ?userAge;\n" +
+                "    ontology:hasBloodPressure ?userBloodPressure;\n" +
+                "    ontology:hasDiabetes ?userDiabetes;\n" +
+                "    ontology:hasGender ?userGender;\n" +
+                "    ontology:hasPneumonia ?userPneumonia.\n" +
+                "  FILTER(\n" +
+                "    xsd:integer(?userAge) >= " + healthData.getAge() + " && xsd:integer(?userAge) <= " + Integer.toString(Integer.parseInt(healthData.getAge()) + 10) + " &&\n" +
+                "    ?userBloodPressure = \"" + healthData.getBloodPressure() + "\" &&\n" +
+                "    ?userDiabetes = \"" + healthData.getDiabetes() + "\" &&\n" +
+                "    ?userGender = \"" + healthData.getGender() + "\" &&\n" +
+                "    ?userPneumonia = \"" + healthData.getPneumonia() + "\"\n" +
+                "  )\n" +
+                "}";
+    }
+
 
     private int executeCustomQuery(String sparqlQuery) {
         try (QueryExecution qexec = QueryExecutionFactory.sparqlService(fusekiEndpointUrl, QueryFactory.create(sparqlQuery))) {
