@@ -19,6 +19,25 @@ public class SPARQLService {
                     "PREFIX ontology: <https://example.com/ontology/>\n" +
                     "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>";
 
+    public List<Integer> buildCustomQuery(HealthDataDTO healthData) {
+        String sparqlCopdQuery = buildCopdQuery(healthData);
+        String sparqlCovidQuery = buildCovidQuery(healthData);
+        String sparqlCardioQuery = buildCardioQuery(healthData);
+
+
+        System.out.println(sparqlCopdQuery + "\n");
+        System.out.println(sparqlCovidQuery+ "\n");
+        System.out.println(sparqlCardioQuery+ "\n");
+
+        List<Integer> countList=new ArrayList<Integer>();
+
+        countList.add(executeCustomQuery(sparqlCopdQuery));
+        countList.add(executeCustomQuery(sparqlCovidQuery));
+        countList.add(executeCustomQuery(sparqlCardioQuery));
+
+        return countList;
+    }
+
     public static String buildCopdQuery(HealthDataDTO healthData)
     {
         return PREFIXES +
@@ -40,25 +59,6 @@ public class SPARQLService {
                 "    ?userSmoker = \"" + healthData.getSmoke() + "\"\n" +
                 "  )\n" +
                 "}";
-    }
-
-    public List<Integer> buildCustomQuery(HealthDataDTO healthData) {
-        String sparqlCopdQuery = buildCopdQuery(healthData);
-        String sparqlCovidQuery = buildCovidQuery(healthData);
-        String sparqlCardioQuery = buildCardioQuery(healthData);
-
-
-        System.out.println(sparqlCopdQuery + "\n");
-        System.out.println(sparqlCovidQuery+ "\n");
-        System.out.println(sparqlCardioQuery+ "\n");
-
-        List<Integer> countList=new ArrayList<Integer>();
-
-        countList.add(executeCustomQuery(sparqlCopdQuery));
-        countList.add(executeCustomQuery(sparqlCovidQuery));
-        countList.add(executeCustomQuery(sparqlCardioQuery));
-
-        return countList;
     }
 
     private String buildCardioQuery(HealthDataDTO healthData) {
