@@ -30,11 +30,13 @@ public class Query_controller {
 
 
     @PostMapping("/saveHealthData")
-    public ResponseEntity<String> executeCustomQuery(@RequestBody HealthDataDTO healthData) {
+    public ResponseEntity<String> executeCustomQuery(@RequestBody HealthDataDTO healthData, Model model) {
         System.out.println(healthData.getSmoke());
         System.out.println(healthData.getAlcohol());
         Integer queryResults = sparqlService.buildCustomQuery(healthData);
+        model.addAttribute("queryResults", queryResults);
         return new ResponseEntity<>(Integer.toString(queryResults), HttpStatus.OK);
+        //return "displayData";
     }
 
 //    @GetMapping("/copd")

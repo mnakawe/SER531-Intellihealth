@@ -1,9 +1,12 @@
 package com.example.Intellihealth.model;
 
+import lombok.Getter;
+
 public class HealthDataDTO {
     private String age;
     private String height;
     private String weight;
+    @Getter
     private String gender;
     private String alcohol;
     private String smoke;
@@ -17,7 +20,7 @@ public class HealthDataDTO {
     private String asthma;
 
 
-    private  String bloodPressure;
+    private  String bloodpressure;
 
     public String getAge() {
         return age;
@@ -29,10 +32,6 @@ public class HealthDataDTO {
 
     public String getWeight() {
         return weight;
-    }
-
-    public String getGender() {
-        return gender;
     }
 
     public String getAlcohol() {
@@ -76,7 +75,7 @@ public class HealthDataDTO {
     }
 
     public String getBloodPressure() {
-        return bloodPressure;
+        return bloodpressure;
     }
 
 }

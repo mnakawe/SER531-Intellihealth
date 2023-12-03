@@ -62,7 +62,7 @@ public class SPARQLService {
                 "    ontology:hasMuscularProblems ?userMuscularProblems;\n" +
                 "    ontology:isSmoker ?userSmoker.\n" +
                 "  FILTER(\n" +
-                "    xsd:integer(?userAge) >= " + healthData.getAge() + " && xsd:integer(?userAge) <= " + healthData.getAge() + 10 + " &&\n" +
+                "    xsd:integer(?userAge) >= " + healthData.getAge() + " && xsd:integer(?userAge) <= " + Integer.toString(Integer.parseInt(healthData.getAge()) + 10) + " &&\n" +
                 "    ?userBloodPressure = \"" + healthData.getBloodPressure() + "\" &&\n" +
                 "    ?userDiabetes = \"" + healthData.getDiabetes() + "\" &&\n" +
                 "    ?userGender = \"" + healthData.getGender() + "\" &&\n" +
