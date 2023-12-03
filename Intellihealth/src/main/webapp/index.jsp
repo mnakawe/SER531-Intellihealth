@@ -47,7 +47,7 @@
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
-            outline: none;
+            outline: None;
             display: inline-block;
         }
 
@@ -59,7 +59,7 @@
             background-color: #4caf50;
             color: #fff;
             padding: 10px;
-            border: none;
+            border: None;
             border-radius: 4px;
             cursor: pointer;
             display: inline-block;
@@ -103,37 +103,37 @@
 
     <label for="alcohol">5. Do you consume alcohol?</label>
     <select id="alcohol" name="alcohol" required>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
 
     <label for="smoke">6. Do you smoke?</label>
     <select id="smoke" name="smoke" required>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
 
     <label>7. Do you take any medications for the following</label>
 
     <div class="disease-options">
-        <label class="disease-option">Cholesterol: <select name="cholesterol"><option value="yes">Yes</option><option value="no">No</option></select></label>
-        <label class="disease-option">Hypertension: <select name="hypertension"><option value="yes">Yes</option><option value="no">No</option></select></label>
-        <label class="disease-option">COPD: <select name="copd"><option value="yes">Yes</option><option value="no">No</option></select></label>
-        <label class="disease-option">Diabetes: <select name="diabetes"><option value="yes">Yes</option><option value="no">No</option></select></label>
-        <label class="disease-option">Muscular Problems: <select name="muscularProblems"><option value="yes">Yes</option><option value="no">No</option></select></label>
-        <label class="disease-option">Obesity: <select name="obesity"><option value="yes">Yes</option><option value="no">No</option></select></label>
+        <label class="disease-option">Cholesterol: <select name="cholesterol"><option value="Yes">Yes</option><option value="No">No</option></select></label>
+        <label class="disease-option">Blood Pressure: <select name="bloodpressure"><option value="Yes">Yes</option><option value="No">No</option></select></label>
+        <label class="disease-option">COPD: <select name="copd"><option value="Yes">Yes</option><option value="No">No</option></select></label>
+        <label class="disease-option">Diabetes: <select name="diabetes"><option value="Yes">Yes</option><option value="No">No</option></select></label>
+        <label class="disease-option">Muscular Problems: <select name="muscularProblems"><option value="Yes">Yes</option><option value="No">No</option></select></label>
+        <label class="disease-option">Obesity: <select name="obesity"><option value="Yes">Yes</option><option value="No">No</option></select></label>
     </div>
 
     <label for="pneumonia">8. History of Pneumonia:</label>
     <select id="pneumonia" name="pneumonia" required>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
 
     <label for="asthma">9. History of Asthma:</label>
     <select id="asthma" name="asthma" required>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
 
     <input type="submit" value="Submit"/>
@@ -156,7 +156,6 @@
             const jsonData = JSON.stringify(formObject);
             console.log('JSON Data:', jsonData);
 
-            // Replace 'your_backend_endpoint_url' with your actual backend endpoint URL
             const backendUrl = 'http://localhost:8081/sparql/saveHealthData';
 
             fetch(backendUrl, {
@@ -168,13 +167,14 @@
             })
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Network response was not ok.');
+                        throw new Error('Network response was Not ok.');
                     }
                     return response.json();
                 })
                 .then(data => {
                     console.log('Response from backend:', data);
-                    // Optionally handle the response here
+                    // Redirect to the displayData.jsp page with the received data
+                    window.location.href = 'displayData.jsp?' + new URLSearchParams(formObject);
                 })
                 .catch(error => {
                     console.error('There was a problem with the fetch operation:', error);
