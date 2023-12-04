@@ -1,6 +1,6 @@
 package com.example.Intellihealth;
 
-import com.example.Intellihealth.config.WebConfig;
+//import com.example.Intellihealth.config.WebConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @SpringBootApplication
-@Import(WebConfig.class)
 public class IntellihealthApplication {
 
 	public static void main(String[] args) {

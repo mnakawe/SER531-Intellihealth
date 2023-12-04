@@ -2,6 +2,7 @@ package com.example.Intellihealth.Service;
 
 import com.example.Intellihealth.model.HealthDataDTO;
 import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.Literal;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -23,17 +24,22 @@ public class SPARQLService {
         String sparqlCopdQuery = buildCopdQuery(healthData);
         String sparqlCovidQuery = buildCovidQuery(healthData);
         String sparqlCardioQuery = buildCardioQuery(healthData);
+        String sparqlGenericQuery = buildGenericQuery(healthData);
 
 
         System.out.println(sparqlCopdQuery + "\n");
         System.out.println(sparqlCovidQuery+ "\n");
         System.out.println(sparqlCardioQuery+ "\n");
+        System.out.println(sparqlGenericQuery+ "\n");
 
         List<Integer> countList=new ArrayList<Integer>();
 
         countList.add(executeCustomQuery(sparqlCopdQuery));
         countList.add(executeCustomQuery(sparqlCovidQuery));
         countList.add(executeCustomQuery(sparqlCardioQuery));
+        List<Integer> generic_list = executeGenericQuery(sparqlGenericQuery);
+        countList.add(generic_list.get(0));
+        countList.add(generic_list.get(1));
 
         return countList;
     }
@@ -51,6 +57,29 @@ public class SPARQLService {
 
         return 0;
     }
+
+    private List<Integer> executeGenericQuery(String sparqlQuery) {
+        List<Integer> userCounts = new ArrayList<>();
+
+        try (QueryExecution qexec = QueryExecutionFactory.sparqlService(fusekiEndpointUrl, QueryFactory.create(sparqlQuery))) {
+            ResultSet results = qexec.execSelect();
+
+            while (results.hasNext()) {
+                QuerySolution soln = results.nextSolution();
+                Literal userCountLiteral = soln.getLiteral("userCount");
+
+                if (userCountLiteral != null) {
+                    int userCount = userCountLiteral.getInt();
+                    userCounts.add(userCount);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return userCounts;
+    }
+
 
     public static String buildCopdQuery(HealthDataDTO healthData)
     {
@@ -73,6 +102,24 @@ public class SPARQLService {
                 "    ?userSmoker = \"" + healthData.getSmoke() + "\"\n" +
                 "  )\n" +
                 "}";
+    }
+
+    public static String buildGenericQuery(HealthDataDTO healthData)
+    {
+        return PREFIXES + "\nPREFIX onto: <http://www.ontotext.com/>"+
+                "\nSELECT (COUNT(?user) AS ?userCount)\n" +
+                "WHERE {\n" +
+                "?user\n" +
+                "    ontology:hasAge ?userAge;\n" +
+                "    ontology:hasBloodPressure ?userBloodPressure;\n" +
+                "    ontology:hasDiabetes ?userDiabetes;\n" +
+                "    ontology:hasGender ?userGender;\n" +
+                "    ontology:isSmoker ?userSmoker.\n" +
+                "  FILTER(\n" +
+                "    xsd:integer(?userAge) >= " + "10" + " && xsd:integer(?userAge) <= " + "100" + " &&\n" +
+                "    (?userGender = \"Male\" || ?userGender = \"Female\"))\n" +
+                "}\n" +
+                "GROUP BY ?userGender";
     }
 
     private String buildCardioQuery(HealthDataDTO healthData) {
