@@ -12,13 +12,14 @@
 //import org.springframework.web.servlet.view.JstlView;
 //
 //@Configuration
+//@ComponentScan(basePackages = "com.example.Intellihealth")
 //@EnableWebMvc
 //public class WebConfig implements WebMvcConfigurer {
 //    @Bean
 //    public ViewResolver viewResolver() {
 //        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 //        resolver.setViewClass(JstlView.class);
-//        resolver.setPrefix("/WEB-INF/views/");
+//        resolver.setPrefix("/WEB-INF/jsp/");
 //        resolver.setSuffix(".jsp");
 //        return resolver;
 //    }

@@ -2,11 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Display String List</title>
+    <title>Display Data</title>
 </head>
 <body>
-
-<h2>String List:</h2>
-
+    <h1>Hello World from displayData.jsp</h1>
 </body>
 </html>
