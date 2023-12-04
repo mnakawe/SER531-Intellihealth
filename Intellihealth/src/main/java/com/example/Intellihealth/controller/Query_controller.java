@@ -5,6 +5,8 @@ import com.example.Intellihealth.Service.SPARQLService;
 import com.example.Intellihealth.model.HealthDataDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +33,7 @@ public class Query_controller {
         System.out.println(queryResults.get(0));
         System.out.println(queryResults.get(1));
         System.out.println(queryResults.get(2));
-        //return new ResponseEntity<>(Integer.toString(queryResults), HttpStatus.OK);
+        //return new ResponseEntity<>(Integer.toString(0), HttpStatus.OK);
         return "displayData";
     }
 }

@@ -25,3 +25,4 @@ public class HealthDataDTO {
     private @Getter @Setter String asthma;
     private @Getter @Setter String bloodPressure;
 }
+

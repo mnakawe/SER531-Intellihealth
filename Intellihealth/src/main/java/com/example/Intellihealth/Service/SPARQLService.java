@@ -38,6 +38,20 @@ public class SPARQLService {
         return countList;
     }
 
+    private int executeCustomQuery(String sparqlQuery) {
+        try (QueryExecution qexec = QueryExecutionFactory.sparqlService(fusekiEndpointUrl, QueryFactory.create(sparqlQuery))) {
+            ResultSet results = qexec.execSelect();
+            if (results.hasNext()) {
+                QuerySolution soln = results.nextSolution();
+                return soln.getLiteral("userCount").getInt();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
     public static String buildCopdQuery(HealthDataDTO healthData)
     {
         return PREFIXES +
@@ -101,18 +115,4 @@ public class SPARQLService {
                 "}";
     }
 
-
-    private int executeCustomQuery(String sparqlQuery) {
-        try (QueryExecution qexec = QueryExecutionFactory.sparqlService(fusekiEndpointUrl, QueryFactory.create(sparqlQuery))) {
-            ResultSet results = qexec.execSelect();
-            if (results.hasNext()) {
-                QuerySolution soln = results.nextSolution();
-                return soln.getLiteral("userCount").getInt();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return 0;
-    }
 }
