@@ -18,9 +18,11 @@ Steps to run the app.
 
 6-> Install [spring-boot](https://docs.spring.io/spring-boot/docs/1.0.0.RC5/reference/html/getting-started-installing-spring-boot.html) (this also tells how to install maven). Confirm the installation. 
 
-7->
+7-> Make sure you have tomcat 10.1.6 installed, if not install [tomcat](https://tomcat.apache.org/download-10.cgi)
 
 8-> Now head to the project folder [Intellihealth](https://github.com/mnakawe/SER531-Intellihealth/tree/main/Intellihealth) and run the command `mvn clean install` (where the pom.xml is).
 
-9-> Run the command `mvn spring-boot:run` to start the Intellihealth server. (or just run it the app through intellij)
+9-> Run the command `mvn spring-boot:run` to start the Intellihealth server. (or just run it the app through intellij). You should see the server running on port `8081` and the tomcat should have also started. 
+
+10-> Now you should be able to access the webapp at `http://localhost:8081`.
  
