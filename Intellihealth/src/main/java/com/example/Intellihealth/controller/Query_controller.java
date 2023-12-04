@@ -42,6 +42,12 @@ public class Query_controller {
         System.out.println(queryResults.get(3));
         System.out.println(queryResults.get(4));
         //return new ResponseEntity<>(Integer.toString(0), HttpStatus.OK);
+        return new ModelAndView("redirect:/displayData");
+    }
+
+    @GetMapping("/displayData")
+    public ModelAndView displayData() {
+        System.out.println("displayData Controller called");
         return new ModelAndView("displayData");
     }
 }

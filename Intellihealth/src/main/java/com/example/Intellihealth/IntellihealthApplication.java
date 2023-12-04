@@ -22,7 +22,7 @@ public class IntellihealthApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("http://localhost:8080") // Replace with your UI's URL
+						.allowedOrigins("http://localhost:8081") // Replace with your UI's URL
 						.allowedMethods("GET", "POST", "PUT", "DELETE")
 						.allowedHeaders("*");
 			}

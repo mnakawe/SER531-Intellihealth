@@ -165,18 +165,7 @@
                 },
                 body: jsonData
             })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was Not ok.');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Response from backend:', data);
-                    // Redirect to the displayData.jsp page with the received data
-                    window.location.href = 'displayData.jsp?' + new URLSearchParams(formObject);
-                })
-                .catch(error => {
+         .catch(error => {
                     console.error('There was a problem with the fetch operation:', error);
                     // Handle errors here
                 });
