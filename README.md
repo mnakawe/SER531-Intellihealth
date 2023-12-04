@@ -26,5 +26,7 @@ Steps to run the app.
 
 10-> Now you should be able to access the webapp at `http://localhost:8081`.
 
-11-> You can see the app [here](https://drive.google.com/file/d/1tqKqu6lRSDQe4uC9kMBB-iaReyWXozuw/view?usp=drive_link)
+11-> You can see the video demonstration [here](https://drive.google.com/file/d/1tqKqu6lRSDQe4uC9kMBB-iaReyWXozuw/view?usp=drive_link)
+
+12-> Link to the [repo](https://github.com/mnakawe/SER531-Intellihealth)
  
