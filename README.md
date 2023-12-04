@@ -12,7 +12,7 @@ Steps to run the app.
 
 3-> You can see the option of adding a dataset, create a data set name it hello-world-dataset (you can name something else, but please replace the name in [application.properties](https://github.com/mnakawe/SER531-Intellihealth/blob/main/Intellihealth/src/main/resources/application.properties) file).
 
-4-> After creating the data set, we need to import the data, so click add-data and select files, add the rdf.
+4-> After creating the data set, we need to import the data, so click add-data and select files, add the [rdf](https://drive.google.com/file/d/1tRUk5pX0IEUmjQNCXoyaGTZY3QRIjojh/view?usp=drive_link).
 
 5-> Make sure you have [maven](https://maven.apache.org/install.html) installed. If you are using intellij you can just intall the plugin.
 
