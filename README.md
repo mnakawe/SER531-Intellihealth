@@ -6,7 +6,7 @@ Intellihealth has been developed and tested on mac in Intellij.
 
 Steps to run the app.
 
-1-> Make sure you have Fuseki Downloaded  [Fuseki version 4.10.0]([https://github.com/avashis9/ScrumPlay/tree/sprint-2](https://jena.apache.org/download/)https://jena.apache.org/download/)
+1-> Make sure you have Fuseki Downloaded  [Fuseki version 4.10.0](https://jena.apache.org/download/)
 
 2-> Head into the downloaded Fuseki directory and run `chmod 777 fuseki-server` and `./fuseki-server`, the Fuseki server should start at the port 3030, head to the [fuseki-server](http://localhost:3030/#/)
 
@@ -14,7 +14,7 @@ Steps to run the app.
 
 4-> After creating the data set, we need to import the data, so click add-data and select files, add the [rdf](https://drive.google.com/file/d/1tRUk5pX0IEUmjQNCXoyaGTZY3QRIjojh/view?usp=drive_link).
 
-5-> Make sure you have [maven](https://maven.apache.org/install.html) installed. If you are using intellij you can just intall the plugin.
+5-> Make sure you have [maven](https://maven.apache.org/install.html) installed. If you are using intellij you can just install the plugin.
 
 6-> Install [spring-boot](https://docs.spring.io/spring-boot/docs/1.0.0.RC5/reference/html/getting-started-installing-spring-boot.html) (this also tells how to install maven). Confirm the installation. 
 
