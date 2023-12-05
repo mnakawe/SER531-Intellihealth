@@ -6,7 +6,7 @@ Intellihealth has been developed and tested on mac in Intellij.
 
 Steps to run the app.
 
-1-> Make sure you have Fuseki Downloaded  [Fuseki version 4.10.0](https://jena.apache.org/download/)
+1-> Make sure you have Fuseki Downloaded Fuseki version [4.10.0](https://jena.apache.org/download/).
 
 2-> Head into the downloaded Fuseki directory and run `chmod 777 fuseki-server` and `./fuseki-server`, the Fuseki server should start at the port 3030, head to the [fuseki-server](http://localhost:3030/#/)
 
